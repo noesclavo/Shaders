@@ -1,0 +1,40 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="" Name="Sampler">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_texture_grid">
+      </Uniform>
+
+      <Uniform Row="1" Col="1" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="action_coords" DisplayName="Use Action Coordinates" Name="action_coords">
+      </Uniform>
+      <Uniform Row="0" Col="1" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="output_color" DisplayName="Output Selected Color" Name="output_color">
+      </Uniform>
+
+
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="False" IconDefaultState="True" IconType="Axis" Type="vec2" ChannelName="sample_coords" DisplayName="Sample Location" Name="sample_coords" UIConditionSource="action_coords" UIConditionValue="False" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Inc="0.5" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="False" IconDefaultState="True" IconType="Icon" ValueType="Position" Type="vec3" ChannelName="action_sample_coords" DisplayName="Action Sample Location" Name="action_sample_coords" UIConditionSource="action_coords" UIConditionValue="True" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+
+   </Shader>
+
+   <Page Name="Page 1" Page="0">
+      <Col Name="Sample Location" Col="0" Page="0">
+      </Col>
+      <Col Name="Options" Col="1" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

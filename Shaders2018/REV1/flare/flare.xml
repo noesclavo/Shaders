@@ -1,0 +1,243 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="" Name="FLARE"
+  OutputWidth="1024" OutputHeight="1024">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+        GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_texture_grid">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="10.0" Min="000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="ratio" DisplayName="Ratio" Name="ratio">
+      </Uniform>
+
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="0" Col="0" Page="0" Type="int" ChannelName="type" DisplayName="Element Type" ValueType="Popup" Name="type">
+        <PopupEntry Title="Streaks" Value="93">
+        </PopupEntry>
+        <PopupEntry Title="Spikes" Value="92">
+        </PopupEntry>
+        <PopupEntry Title="Rings" Value="91">
+        </PopupEntry>
+        <PopupEntry Title="Lights" Value="90">
+        </PopupEntry>
+        <PopupEntry Title="Iris" Value="89">
+        </PopupEntry>
+        <PopupEntry Title="Caustics" Value="88">
+        </PopupEntry>
+      </Uniform>
+
+      <Uniform Default="9" Inc="1" Tooltip="" Row="0" Col="1" Page="0" Type="int" ChannelName="streaks" DisplayName="Streaks" ValueType="Popup" Name="streaks"
+        UIConditionSource="type" UIConditionValue="93" UIConditionType="Hide">
+        <PopupEntry Title="Streaks" Value="9">
+        </PopupEntry>
+        <PopupEntry Title="Streak A" Value="16">
+        </PopupEntry>
+        <PopupEntry Title="Streak B" Value="17">
+        </PopupEntry>
+        <PopupEntry Title="Streak C" Value="18">
+        </PopupEntry>
+        <PopupEntry Title="Streak D" Value="19">
+        </PopupEntry>
+        <PopupEntry Title="Streak E" Value="20">
+        </PopupEntry>
+        <PopupEntry Title="Streak F" Value="21">
+        </PopupEntry>
+        <PopupEntry Title="Streak G" Value="2">
+        </PopupEntry>
+        <PopupEntry Title="Streak H" Value="1">
+        </PopupEntry>
+        <PopupEntry Title="Streak I" Value="0">
+        </PopupEntry>
+      </Uniform>
+
+  <Uniform Default="9" Inc="1" Tooltip="" Row="0" Col="1" Page="0" Type="int" ChannelName="spikes" DisplayName="Spikes" ValueType="Popup" Name="spikes"
+        UIConditionSource="type" UIConditionValue="92" UIConditionType="Hide">
+        <PopupEntry Title="Spikes" Value="9">
+        </PopupEntry>
+        <PopupEntry Title="Blue Spike" Value="30">
+        </PopupEntry>
+        <PopupEntry Title="Blue Fan" Value="31">
+        </PopupEntry>
+        <PopupEntry Title="Chroma Circle" Value="32">
+        </PopupEntry>
+        <PopupEntry Title="Chroma Spike" Value="11">
+        </PopupEntry>
+        <PopupEntry Title="Gold Glow" Value="12">
+        </PopupEntry>
+        <PopupEntry Title="Orange Fan" Value="13">
+        </PopupEntry>
+        <PopupEntry Title="Orange Spike" Value="14">
+        </PopupEntry>
+        <PopupEntry Title="White Spike" Value="15">
+        </PopupEntry>
+      </Uniform>
+
+  <Uniform Default="9" Inc="1" Tooltip="" Row="0" Col="1" Page="0" Type="int" ChannelName="rings" DisplayName="Rings" ValueType="Popup" Name="rings"
+        UIConditionSource="type" UIConditionValue="91" UIConditionType="Hide">
+        <PopupEntry Title="Rings" Value="9">
+        </PopupEntry>
+        <PopupEntry Title="Broken 1" Value="27">
+        </PopupEntry>
+        <PopupEntry Title="Broken 2" Value="28">
+        </PopupEntry>
+        <PopupEntry Title="Broken 3" Value="29">
+        </PopupEntry>
+      </Uniform>
+
+
+  <Uniform Default="9" Inc="1" Tooltip="" Row="0" Col="1" Page="0" Type="int" ChannelName="lights" DisplayName="Lights" ValueType="Popup" Name="lights"
+        UIConditionSource="type" UIConditionValue="90" UIConditionType="Hide">
+        <PopupEntry Title="Lights" Value="9">
+        </PopupEntry>
+        <PopupEntry Title="Aura Green" Value="46">
+        </PopupEntry>
+        <PopupEntry Title="Blob Stretched" Value="47">
+        </PopupEntry>
+        <PopupEntry Title="Blue Blob" Value="48">
+        </PopupEntry>
+        <PopupEntry Title="Color Frindge" Value="49">
+        </PopupEntry>
+        <PopupEntry Title="Green Spot" Value="50">
+        </PopupEntry>
+        <PopupEntry Title="Blue" Value="51">
+        </PopupEntry>
+        <PopupEntry Title="Blurred" Value="52">
+        </PopupEntry>
+        <PopupEntry Title="Complex" Value="53">
+        </PopupEntry>
+        <PopupEntry Title="Dome" Value="54">
+        </PopupEntry>
+        <PopupEntry Title="Glass" Value="33">
+        </PopupEntry>
+        <PopupEntry Title="Gold Orb" Value="34">
+        </PopupEntry>
+        <PopupEntry Title="Grate" Value="35">
+        </PopupEntry>
+        <PopupEntry Title="Headlight" Value="36">
+        </PopupEntry>
+        <PopupEntry Title="Pair" Value="37">
+        </PopupEntry>
+        <PopupEntry Title="Read" Value="38">
+        </PopupEntry>
+        <PopupEntry Title="Reverse" Value="39">
+        </PopupEntry>
+        <PopupEntry Title="Rim" Value="40">
+        </PopupEntry>
+        <PopupEntry Title="Ring" Value="41">
+        </PopupEntry>
+        <PopupEntry Title="Shapes" Value="42">
+        </PopupEntry>
+        <PopupEntry Title="Multi Orange" Value="43">
+        </PopupEntry>
+        <PopupEntry Title="Orange Spots 2" Value="22">
+        </PopupEntry>
+        <PopupEntry Title="Orange Spots" Value="23">
+        </PopupEntry>
+        <PopupEntry Title="Random Fans" Value="24">
+        </PopupEntry>
+        <PopupEntry Title="Random Rings" Value="25">
+        </PopupEntry>
+        <PopupEntry Title="Soft Orb" Value="26">
+        </PopupEntry>
+      </Uniform>
+
+
+  <Uniform Default="9" Inc="1" Tooltip="" Row="0" Col="1" Page="0" Type="int" ChannelName="iris" DisplayName="Iris" ValueType="Popup" Name="iris"
+        UIConditionSource="type" UIConditionValue="89" UIConditionType="Hide">
+        <PopupEntry Title="Iris" Value="9">
+        </PopupEntry>
+        <PopupEntry Title="Backlight" Value="85">
+        </PopupEntry>
+        <PopupEntry Title="Big Spots" Value="86">
+        </PopupEntry>
+        <PopupEntry Title="Blades" Value="87">
+        </PopupEntry>
+        <PopupEntry Title="Blurry" Value="66">
+        </PopupEntry>
+        <PopupEntry Title="Brown" Value="67">
+        </PopupEntry>
+        <PopupEntry Title="Clean" Value="68">
+        </PopupEntry>
+        <PopupEntry Title="Confusion" Value="69">
+        </PopupEntry>
+        <PopupEntry Title="Disc" Value="70">
+        </PopupEntry>
+        <PopupEntry Title="Ghost" Value="71">
+        </PopupEntry>
+        <PopupEntry Title="Grainy" Value="72">
+        </PopupEntry>
+        <PopupEntry Title="Green" Value="73">
+        </PopupEntry>
+        <PopupEntry Title="Messy" Value="74">
+        </PopupEntry>
+        <PopupEntry Title="Moon" Value="75">
+        </PopupEntry>
+        <PopupEntry Title="Obscured" Value="76">
+        </PopupEntry>
+        <PopupEntry Title="Octogon" Value="55">
+        </PopupEntry>
+        <PopupEntry Title="Orb" Value="56">
+        </PopupEntry>
+        <PopupEntry Title="Pentagon" Value="57">
+        </PopupEntry>
+        <PopupEntry Title="Plain" Value="58">
+        </PopupEntry>
+        <PopupEntry Title="Refractive" Value="59">
+        </PopupEntry>
+        <PopupEntry Title="Silk" Value="60">
+        </PopupEntry>
+        <PopupEntry Title="Soft" Value="61">
+        </PopupEntry>
+        <PopupEntry Title="Specks" Value="62">
+        </PopupEntry>
+        <PopupEntry Title="Spots" Value="63">
+        </PopupEntry>
+        <PopupEntry Title="Spotty" Value="64">
+        </PopupEntry>
+        <PopupEntry Title="Wave" Value="65">
+        </PopupEntry>
+        <PopupEntry Title="Wet" Value="44">
+        </PopupEntry>
+        <PopupEntry Title="Wood" Value="45">
+        </PopupEntry>
+      </Uniform>
+
+      <Uniform Default="9" Inc="1" Tooltip="" Row="0" Col="1" Page="0" Type="int" ChannelName="caustics" DisplayName="Caustics" ValueType="Popup" Name="caustics"
+        UIConditionSource="type" UIConditionValue="88" UIConditionType="Hide">
+        <PopupEntry Title="Caustics" Value="9">
+        </PopupEntry>
+        <PopupEntry Title="Blob" Value="94">
+        </PopupEntry>
+        <PopupEntry Title="Color" Value="95">
+        </PopupEntry>
+        <PopupEntry Title="Comples" Value="96">
+        </PopupEntry>
+        <PopupEntry Title="Green" Value="97">
+        </PopupEntry>
+        <PopupEntry Title="Layers" Value="98">
+        </PopupEntry>
+        <PopupEntry Title="Moon" Value="77">
+        </PopupEntry>
+        <PopupEntry Title="Orange Dots" Value="78">
+        </PopupEntry>
+        <PopupEntry Title="Purple Orange" Value="79">
+        </PopupEntry>
+        <PopupEntry Title="Radial" Value="80">
+        </PopupEntry>
+        <PopupEntry Title="Spark" Value="81">
+        </PopupEntry>
+        <PopupEntry Title="Sparkle" Value="82">
+        </PopupEntry>
+        <PopupEntry Title="Spread" Value="83">
+        </PopupEntry>
+        <PopupEntry Title="Stripe" Value="84">
+        </PopupEntry>
+      </Uniform>
+   </Shader>
+
+   <Page Name="Page 1" Page="0">
+      <Col Name="Element Type" Col="0" Page="0">
+      </Col>
+      <Col Name="Element" Col="1" Page="0">
+      </Col>
+      <Col Name="Options" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

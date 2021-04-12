@@ -1,0 +1,130 @@
+<ShaderNodePreset CommercialUsePermitted="True" Description="" LimitInputsToTexture="True" MatteProvider="False" Name="Preset Name" ShaderType="Matchbox" SoftwareVersion="2017.0.0" SupportsAction="False" SupportsAdaptiveDegradation="False" SupportsTimeline="False" SupportsTransition="False" TimelineUseBack="False" Version="1">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" Index="1" OutputBitDepth="Output">
+      <Uniform DisplayName="Front" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Index="0" InputColor="67, 77, 83" Mipmaps="False" Name="Front" NoInput="Error" Tooltip="" Type="sampler2D">
+      </Uniform>
+      <Uniform DisplayName="Matte" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Index="1" InputColor="67, 77, 83" Mipmaps="False" Name="Matte" NoInput="Error" Tooltip="" Type="sampler2D">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" Index="2" OutputBitDepth="Output">
+      <Uniform ChannelName="strength_are_vectors" Col="0" Default="False" DisplayName="strength_are_vectors" Name="strength_are_vectors" Page="0" Row="0" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform ChannelName="angle" Col="0" Default="0.0" DisplayName="angle" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="angle" Page="0" ResDependent="None" Row="1" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform DisplayName="Strength" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Index="2" InputColor="67, 77, 83" Mipmaps="False" Name="Strength" NoInput="Error" Tooltip="" Type="sampler2D">
+      </Uniform>
+      <Uniform ChannelName="use_angle" Col="0" Default="False" DisplayName="use_angle" Name="use_angle" Page="0" Row="2" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform Action3DWidget="False" ChannelName="direction" Col="0" DisplayName="direction" IconType="None" Inc="0.01" Name="direction" Page="0" Row="3" Tooltip="" Type="vec2">
+         <SubUniform Default="0.0" Max="1000000.0" Min="-1000000.0" ResDependent="None">
+         </SubUniform>
+         <SubUniform Default="0.0" Max="1000000.0" Min="-1000000.0" ResDependent="None">
+         </SubUniform>
+      </Uniform>
+      <Uniform ChannelName="bidirectional" Col="1" Default="False" DisplayName="bidirectional" Name="bidirectional" Page="0" Row="0" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform ChannelName="blur_amount" Col="1" Default="0.0" DisplayName="blur_amount" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="blur_amount" Page="0" ResDependent="None" Row="1" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="blur_type" Col="1" Default="0" DisplayName="blur_type" Inc="1" Max="1000000" Min="-1000000" Name="blur_type" Page="0" Row="2" Tooltip="" Type="int">
+      </Uniform>
+      <Uniform ChannelName="blur_vectors" Col="1" Default="False" DisplayName="blur_vectors" Name="blur_vectors" Page="0" Row="3" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform ChannelName="h_bias" Col="1" Default="0.0" DisplayName="h_bias" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="h_bias" Page="0" ResDependent="None" Row="4" Tooltip="" Type="float">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" Index="3" OutputBitDepth="Output">
+      <Uniform ChannelName="strength_are_vectors" DisplayName="strength_are_vectors" Name="strength_are_vectors" Type="bool">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="angle" DisplayName="angle" Name="angle" Type="float">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="use_angle" DisplayName="use_angle" Name="use_angle" Type="bool">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="direction" DisplayName="direction" Name="direction" Type="vec2">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="bidirectional" DisplayName="bidirectional" Name="bidirectional" Type="bool">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="blur_amount" DisplayName="blur_amount" Name="blur_amount" Type="float">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="v_bias" Col="2" Default="0.0" DisplayName="v_bias" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="v_bias" Page="0" ResDependent="None" Row="0" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="blur_type" DisplayName="blur_type" Name="blur_type" Type="int">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="blur_vectors" DisplayName="blur_vectors" Name="blur_vectors" Type="bool">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" InputColor="67, 77, 83" Mipmaps="False" Name="adsk_results_pass2" Type="sampler2D">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" Index="4" OutputBitDepth="Output">
+      <Uniform ChannelName="pos_y" Col="2" Default="0.0" DisplayName="pos_y" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="pos_y" Page="0" ResDependent="None" Row="1" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="strength_are_vectors" DisplayName="strength_are_vectors" Name="strength_are_vectors" Type="bool">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform ChannelName="skew_y" Col="2" Default="0.0" DisplayName="skew_y" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="skew_y" Page="0" ResDependent="None" Row="2" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="scale_y" Col="2" Default="1.0" DisplayName="scale_y" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="scale_y" Page="0" ResDependent="None" Row="3" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="warped_only" Col="2" Default="False" DisplayName="warped_only" Name="warped_only" Page="0" Row="4" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform Action3DWidget="False" ChannelName="center" Col="3" DisplayName="center" IconType="None" Inc="0.01" Name="center" Page="0" Row="0" Tooltip="" Type="vec2">
+         <SubUniform Default=".5" Max="1000000.0" Min="-1000000.0" ResDependent="None">
+         </SubUniform>
+         <SubUniform Default=".5" Max="1000000.0" Min="-1000000.0" ResDependent="None">
+         </SubUniform>
+      </Uniform>
+      <Uniform ChannelName="trans" Col="3" Default="0.0" DisplayName="trans" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="trans" Page="0" ResDependent="None" Row="2" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform DisplayName="Front" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Index="3" Mipmaps="False" Name="Front" Tooltip="" Type="sampler2D">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" InputColor="67, 77, 83" Mipmaps="False" Name="adsk_results_pass1" Type="sampler2D">
+      </Uniform>
+      <Uniform ChannelName="rot" Col="3" Default="0.0" DisplayName="rot" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="rot" Page="0" ResDependent="None" Row="3" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="skew_x" Col="3" Default="0.0" DisplayName="skew_x" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="skew_x" Page="0" ResDependent="None" Row="4" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="scale" Col="0" Default="1.0" DisplayName="scale" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="scale" Page="1" ResDependent="None" Row="0" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="repeat_texture" Col="0" Default="False" DisplayName="repeat_texture" Name="repeat_texture" Page="1" Row="1" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform ChannelName="show_vectors" Col="0" Default="False" DisplayName="show_vectors" Name="show_vectors" Page="1" Row="2" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform ChannelName="scale_x" Col="0" Default="1.0" DisplayName="scale_x" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="scale_x" Page="1" ResDependent="None" Row="3" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform ChannelName="pos_x" Col="0" Default="0.0" DisplayName="pos_x" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="pos_x" Page="1" ResDependent="None" Row="4" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" InputColor="67, 77, 83" Mipmaps="False" Name="adsk_results_pass3" Type="sampler2D">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Col="0" Name="Column 1" Page="0">
+      </Col>
+      <Col Col="1" Name="Column 2" Page="0">
+      </Col>
+      <Col Col="2" Name="Column 3" Page="0">
+      </Col>
+      <Col Col="3" Name="Column 4" Page="0">
+      </Col>
+   </Page>
+   <Page Name="Page 2" Page="1">
+      <Col Col="0" Name="Column 5" Page="1">
+      </Col>
+   </Page>
+</ShaderNodePreset>

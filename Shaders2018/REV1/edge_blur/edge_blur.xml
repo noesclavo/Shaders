@@ -1,0 +1,114 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="" Name="EDGEBLUR">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Max="6" Min="0" Default="0" Inc="1" Tooltip="Working colorspace. Set this to the current working colorspace. This insures a linear blur (no dark edges)." Row="0" Col="3" Page="0" DisplayName="Colorspace" Type="int" Name="i_colorspace" ValueType="Popup">
+        <PopupEntry Title="Rec 709" Value="0">
+        </PopupEntry>
+        <PopupEntry Title="sRGB" Value="1">
+        </PopupEntry>
+        <PopupEntry Title="Linear" Value="2">
+        </PopupEntry>
+        <PopupEntry Title="2.2 Gamma" Value="3">
+        </PopupEntry>
+        <PopupEntry Title="1.8 Gamma" Value="4">
+        </PopupEntry>
+        <PopupEntry Title="LogC V3" Value="5">
+        </PopupEntry>
+      </Uniform>
+
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Matte">
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="edge_width" DisplayName="Edge Width" Name="edge_width">
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+      <Uniform Type="float" ChannelName="edge_width" DisplayName="edge_width" Name="edge_width">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+      <Uniform ResDependent="None" Max="10.0" Min="1.0" Default="1.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="gamma" DisplayName="Edge Gamma" Name="gamma">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="10.0" Min="1.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="gain" DisplayName="Edge Gain" Name="gain">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.00" Default="5.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="blur_amount" DisplayName="Blur Width" Name="blur_amount">
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="5">
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass4">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+      <Uniform Type="float" ChannelName="gain" DisplayName="gain" Name="gain">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Type="float" ChannelName="gamma" DisplayName="gamma" Name="gamma">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Type="float" ChannelName="blur_amount" DisplayName="blur_amount" Name="blur_amount">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+   </Shader>
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="6">
+
+      <Uniform Max="1" Min="0" Default="0" Inc="1" Tooltip="Matte Output" Row="1" Col="3" Page="0" DisplayName="Matte Output" Type="int" Name="matte_out" ValueType="Popup">
+        <PopupEntry Title="Edges Only" Value="0">
+        </PopupEntry>
+        <PopupEntry Title="Add Edges" Value="1">
+        </PopupEntry>
+      </Uniform>
+
+      <Uniform Type="int" ChannelName="i_colorspace" DisplayName="i_colorspace" Name="i_colorspace">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+      <Uniform Type="float" ChannelName="gain" DisplayName="gain" Name="gain">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Type="float" ChannelName="gamma" DisplayName="gamma" Name="gamma">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass5">
+      </Uniform>
+   </Shader>
+
+   <Page Name="Page 1" Page="0">
+      <Col Name="Edge" Col="0" Page="0">
+      </Col>
+      <Col Name="Blur" Col="1" Page="0">
+      </Col>
+      <Col Name="I/O" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

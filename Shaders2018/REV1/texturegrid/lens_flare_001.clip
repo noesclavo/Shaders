@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clip type="clip" version="5">
+	<name type="string">lens_flare_001</name>
+	<userData type="dict">
+		<appName type="binary">Autodesk® Flame®</appName>
+		<appVersion type="string">2017.1.2</appVersion>
+		<module type="string">Batch</module>
+	</userData>
+	<tracks>
+		<track uid="1E94496B-91E5-45E9-A6E7-6CFCAEB3EA3E">
+			<trackType>video</trackType>
+			<editRate type="rate">
+				<numerator>24000</numerator>
+				<denominator>1001</denominator>
+			</editRate>
+			<name type="string">lens_flare_001</name>
+			<feeds currentVersion="v0">
+				<feed vuid="v0" uid="E7D1ECED-9C93-448E-A508-A89EFE3158E4">
+					<storageFormat type="format">
+						<type>video</type>
+						<channelsDepth type="uint">16</channelsDepth>
+						<channelsEncoding type="string">Float</channelsEncoding>
+						<channelsEndianess type="string">Little Endian</channelsEndianess>
+						<colourSpace type="string">Unknown</colourSpace>
+						<fieldDominance type="int">2</fieldDominance>
+						<height type="uint">600</height>
+						<nbChannels type="uint">3</nbChannels>
+						<pixelLayout type="string">RGB</pixelLayout>
+						<pixelRatio type="float">1</pixelRatio>
+						<rowOrdering type="string">down</rowOrdering>
+						<width type="uint">200</width>
+					</storageFormat>
+					<userData type="dict">
+						<recordTimecode type="time" label="00:00:00+00">
+							<rate>24</rate>
+							<nbTicks>0</nbTicks>
+							<dropMode>NDF</dropMode>
+						</recordTimecode>
+					</userData>
+					<sampleRate>
+						<numerator>24000</numerator>
+						<denominator>1001</denominator>
+					</sampleRate>
+					<startTimecode type="time">
+						<rate>24</rate>
+						<nbTicks>0</nbTicks>
+						<dropMode>NDF</dropMode>
+					</startTimecode>
+					<spans>
+						<span>
+							<path encoding="file">/Users/miles/Dropbox/Shaders2018/REV1/texturegrid/texturegrid.textureGrid.exr</path>
+						</span>
+					</spans>
+				</feed>
+			</feeds>
+		</track>
+	</tracks>
+	<versions currentVersion="v0">
+		<version uid="v0">
+			<creationDate>2017/06/04 11:23:42</creationDate>
+			<userData type="dict">
+				<appName type="binary">Autodesk® Flame®</appName>
+				<appVersion type="string">2017.1.2</appVersion>
+				<module type="string">Batch</module>
+				<versionNumber type="uint64">0</versionNumber>
+			</userData>
+		</version>
+	</versions>
+</clip>

@@ -1,0 +1,81 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="
+
+  SEP
+
+  miles@noesclavo.com
+
+  blur by Lewis Saunders" Name="SEP">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Max="6" Min="0" Default="0" Inc="1" Tooltip="Working colorspace. Set this to the current working colorspace. This insures a linear blur (no dark edges)." Row="0" Col="1" Page="0" DisplayName="Colorspace" Type="int" Name="i_colorspace" ValueType="Popup">
+  			<PopupEntry Title="Rec 709" Value="0">
+                </PopupEntry>
+  			<PopupEntry Title="sRGB" Value="1">
+                </PopupEntry>
+  			<PopupEntry Title="Linear" Value="2">
+                </PopupEntry>
+  			<PopupEntry Title="2.2 Gamma" Value="3">
+                </PopupEntry>
+  			<PopupEntry Title="1.8 Gamma" Value="4">
+                </PopupEntry>
+  			<PopupEntry Title="LogC V3" Value="5">
+                </PopupEntry>
+  		</Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+      <Uniform ResDependent="None" Max="100.0" Min="-00000.0" Default="10.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="blur_width" DisplayName="Blur Width" Name="blur">
+      </Uniform>
+      <Uniform Max="6" Min="0" Default="1" Inc="1" Tooltip="" Row="0" Col="0" Page="0" DisplayName="Output" Type="int" Name="op" ValueType="Popup">
+  			<PopupEntry Title="Low Pass" Value="0">
+                </PopupEntry>
+  			<PopupEntry Title="Hi Pass" Value="1">
+                </PopupEntry>
+  			<PopupEntry Title="Recombine" Value="2">
+                </PopupEntry>
+  		</Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+      <Uniform Type="float" ChannelName="blur" DisplayName="blur" Name="blur">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Type="int" ChannelName="op" DisplayName="op" Name="op">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="4">
+      <Uniform Index="1" Tooltip="" DisplayName="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Index="2" NoInput="White" Tooltip="" DisplayName="Hi Pass" InputColor="200, 200, 200" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="hi_pass">
+      </Uniform>
+      <Uniform Type="int" ChannelName="i_colorspace" DisplayName="Colorspace" Name="i_colorspace">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Type="int" ChannelName="op" DisplayName="op" Name="op">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+      <Uniform InputColor="67, 77, 83" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="adsk_results_pass3">
+      </Uniform>
+      <Uniform Index="1" NoInput="White" Tooltip="" DisplayName="Low Pass" InputColor="30, 30, 30" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="lo_pass">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Options" Col="0" Page="0">
+      </Col>
+      <Col Name="ColorSpace" Col="1" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

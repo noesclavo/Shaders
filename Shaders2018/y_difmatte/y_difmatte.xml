@@ -1,0 +1,32 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="
+
+  DIFMATTE
+
+  miles@noesclavo.com" Name="DIFMATTE">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="blue" DisplayName="Blue" Name="b_gamma">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="100.0" Inc="0.5" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="gain" DisplayName="Gain" Name="gain">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="green" DisplayName="Green" Name="g_gamma">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="red" DisplayName="Red" Name="r_gamma">
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Back" InputType="Back" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Back">
+      </Uniform>
+      <Uniform ResDependent="None" Max="5.0" Min="000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="tolerance" DisplayName="Tolerance" Name="m_gamma">
+      </Uniform>
+      <Uniform Row="0" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="output_matte" DisplayName="Output Matte in All Channels" Name="output_matte">
+     </Uniform>
+   </Shader>
+   <Page Name="DIFMATTE" Page="0">
+      <Col Name="Matte" Col="0" Page="0">
+      </Col>
+      <Col Name="Channels" Col="1" Page="0">
+      </Col>
+      <Col Name="Options" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

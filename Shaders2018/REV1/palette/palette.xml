@@ -1,0 +1,82 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="" Name="PALETTE">
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+
+     <Uniform Index="0" NoInput="Black" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="True" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR_MIPMAP_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Inc="0.1" Tooltip="" Row="0" Col="0" Page="0" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Dominant" Name="dominant" HueShift="False" AngleName="Hue" IntensityName1="Sat" IntensityName2="Gain" UIConditionSource="dominant_from_front" UIConditionValue="False" UIConditionType="Hide">
+      	<SubUniform ResDependent="None" Max="360.0" Min="-1000.0" Default="20.0" Inc="1.0">
+      		</SubUniform>
+      	<SubUniform ResDependent="None" Max="100.0" Min="-1000.0" Default="45.0" Inc="1.0">
+      		</SubUniform>
+      	<SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="75.0" Inc="10.0">
+      		</SubUniform>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="00000.0" Default="75.0" Inc="0.1" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="front_gain" DisplayName="Front Gain" Name="front_gain" UIConditionSource="dominant_from_front" UIConditionValue="True" UIConditionType="Hide">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="00000.0" Default="85.0" Inc="0.1" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="front_sat" DisplayName="Front Saturation" Name="front_sat" UIConditionSource="dominant_from_front" UIConditionValue="True" UIConditionType="Hide">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000.0" Min="00000.0" Default="0.0" Inc="0.1" Tooltip="" Row="4" Col="3" Page="0" Type="float" ChannelName="blur" DisplayName="Blur" Name="color_edge">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="00000.0" Default="25.0" Inc="0.1" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="Color 2" DisplayName="Color 2" Name="color_2_gain">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="60.0" Inc="0.1" Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="Color 3" DisplayName="Color 3" Name="color_3_gain">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="100.0" Inc="0.1" Tooltip="" Row="2" Col="1" Page="0" Type="float" ChannelName="Color 4" DisplayName="Color 4" Name="color_4_gain">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="40.0" Inc="0.1" Tooltip="" Row="3" Col="1" Page="0" Type="float" ChannelName="Color 5" DisplayName="Color 5" Name="color_5_gain">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="200.0" Min="-100.0" Default="25.0" Inc="0.1" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="Color 2" DisplayName="Color 2" Name="color_2_sat">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="200.0" Min="-100.0" Default="75.0" Inc="0.1" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="Color 3" DisplayName="Color 3" Name="color_3_sat">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="200.0" Min="-100.0" Default="00.0" Inc="0.1" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="Color 4" DisplayName="Color 4" Name="color_4_sat">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="200.0" Min="-100.0" Default="20.0" Inc="0.1" Tooltip="" Row="3" Col="2" Page="0" Type="float" ChannelName="Color 5" DisplayName="Color 5" Name="color_5_sat">
+      </Uniform>
+
+      <Uniform Max="6" Min="0" Default="0" Inc="1" Tooltip="" Row="0" Col="3" Page="0" DisplayName="Rule" Type="int" Name="type" ValueType="Popup">
+        <PopupEntry Title="Analogous" Value="0">
+        </PopupEntry>
+        <PopupEntry Title="Monochrome" Value="1">
+        </PopupEntry>
+        <PopupEntry Title="Triad" Value="2">
+        </PopupEntry>
+        <PopupEntry Title="Complementary" Value="3">
+        </PopupEntry>
+      </Uniform>
+
+      <Uniform Max="360" Min="000000" Default="20" Inc="1" Tooltip="" Row="1" Col="3" Page="0" Type="int" ChannelName="separation" DisplayName="Separation" Name="separation" UIConditionSource="type" UIConditionValue="0" UIConditionType="Disable">
+      </Uniform>
+
+
+      <Uniform Max="1" Min="000000" Default=".5" Inc=".05" Tooltip="" Row="2" Col="3" Page="0" Type="float" ChannelName="shade_mix" DisplayName="Shade Mix" Name="shade_mix">
+      </Uniform>
+
+      <Uniform  Default="False" Row="3" Col="3" Page="0" Type="bool" ChannelName="dominant_from_front" DisplayName="Get Dominant from Front" Name="dominant_from_front">
+      </Uniform>
+
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Dominant Color" Col="0" Page="0">
+      </Col>
+      <Col Name="Brightness" Col="1" Page="0">
+      </Col>
+      <Col Name="Saturation Multpilier" Col="2" Page="0">
+      </Col>
+      <Col Name="Options" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

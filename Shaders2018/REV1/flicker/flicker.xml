@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="
+
+FLICKER
+
+If Remove: The 2nd input should be a locked frame frome the same clip as  the 1st input.   The locked frame should be at levels where you'd like to land the flicker free image.   The Result is hopefully a flicker free front.
+
+If Match: The 2nd input should be a clip you'd like apply the same   flicker to, that already exists in input 1.   The Result is a flickered Input 2.
+
+miles@noesclavo.com" Name="FLICKER">
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Max="6" Min="0" Default="0" Inc="1" Tooltip="Working colorspace. Set this to the current working colorspace. This insures a linear blur (no dark edges)." Row="0" Col="2" Page="0" DisplayName="Colorspace" Type="int" Name="i_colorspace" ValueType="Popup">
+  			<PopupEntry Title="Rec 709" Value="0">
+                </PopupEntry>
+  			<PopupEntry Title="sRGB" Value="1">
+                </PopupEntry>
+  			<PopupEntry Title="Linear" Value="2">
+                </PopupEntry>
+  			<PopupEntry Title="2.2 Gamma" Value="3">
+                </PopupEntry>
+  			<PopupEntry Title="1.8 Gamma" Value="4">
+                </PopupEntry>
+  			<PopupEntry Title="LogC V3" Value="5">
+                </PopupEntry>
+  		</Uniform>
+
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="2">
+      <Uniform Type="int" ChannelName="i_colorspace" DisplayName="i_colorspace" Name="i_colorspace">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Lock" InputColor="20, 80, 80" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Lock">
+      </Uniform>
+   </Shader>
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="3">
+
+      <Uniform Max="1" Min="0" Default="0" Inc="1" Tooltip="Remove or Match. To remove the lock frame should be the value (still frame) you like to match the front source to. To match the front source should be the flicker source you'd like to apply to the second input, which now should not be a locked frame" Row="0" Col="0" Page="0" DisplayName="Operation" Type="int" Name="operation" ValueType="Popup">
+  			<PopupEntry Title="Remove" Value="0">
+        </PopupEntry>
+  			<PopupEntry Title="Match" Value="1">
+        </PopupEntry>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="10.0" Min="-00000.0" Default="10.0" Inc="0.01" Tooltip="MipMap level of detail. Best left at 10" Row="1" Col="0" Page="0" Type="float" ChannelName="lod" DisplayName="Level of Detail" Name="lod">
+      </Uniform>
+
+      <!--
+      <Uniform Row="2" Col="0" Page="0" Default="False" Tooltip="Match chroma, not just gain." Type="bool" ChannelName="match_chroma" DisplayName="Match Chroma" Name="match_chroma">
+      </Uniform>
+    -->
+
+      <Uniform Type="int" ChannelName="i_colorspace" DisplayName="i_colorspace" Name="i_colorspace">
+         <Duplicate>
+         </Duplicate>
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="True" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR_MIPMAP_LINEAR" Type="sampler2D" Name="adsk_results_pass2">
+      </Uniform>
+
+      <Uniform InputColor="67, 77, 83" Mipmaps="True" GL_TEXTURE_WRAP_T="GL_MIRRORED_REPEAT" GL_TEXTURE_WRAP_S="GL_MIRRORED_REPEAT" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR_MIPMAP_LINEAR" Type="sampler2D" Name="adsk_results_pass1">
+      </Uniform>
+
+      <Uniform Type="int" ChannelName="i_colorspace" DisplayName="i_colorspace" Name="i_colorspace">
+  			<Duplicate>
+           </Duplicate>
+  		</Uniform>
+
+      <Uniform ResDependent="None" Max="10.0" Min="-10.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="adjust_gain" DisplayName="Adjust Gain" Name="adjust_gain">
+      </Uniform>
+
+      <Uniform Max="2" Min="0" Default="0" Inc="1" Tooltip="" Row="1" Col="2" Page="0" DisplayName="View MipMap" Type="int" Name="view_mipmap" ValueType="Popup">
+  			<PopupEntry Title="None" Value="0">
+        </PopupEntry>
+  			<PopupEntry Title="Front" Value="1">
+        </PopupEntry>
+  			<PopupEntry Title="Lock Frame" Value="2">
+        </PopupEntry>
+      </Uniform>
+   </Shader>
+   <Page Name="FLICKER" Page="0">
+      <Col Name="Flicker" Col="0" Page="0">
+      </Col>
+      <Col Name="Color Correction" Col="1" Page="0">
+      </Col>
+      <Col Name="I/O" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

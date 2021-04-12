@@ -1,0 +1,36 @@
+<ShaderNodePreset CommercialUsePermitted="True" Description="
+
+  REPEAT
+
+  Repeat a texture with options to tile or mirror the u and v separately.
+
+  miles@noesclavo.com" LimitInputsToTexture="True" MatteProvider="False" Name="REPEAT" ShaderType="Matchbox" SoftwareVersion="2017.0.0" SupportsAction="True" SupportsAdaptiveDegradation="False" SupportsTimeline="False" SupportsTransition="False" TimelineUseBack="False" Version="1">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" Index="1" OutputBitDepth="Output">
+      <Uniform ChannelName="mirror_y" Col="1" Default="true" DisplayName="Mirror Y" Name="mirror_y" Page="0" Row="1" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform ChannelName="mirror_x" Col="1" Default="false" DisplayName="Mirror X" Name="mirror_x" Page="0" Row="0" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform DisplayName="Front" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" Index="0" InputType="Front" Mipmaps="False" Name="Front" NoInput="Error" Tooltip="" Type="sampler2D">
+      </Uniform>
+      <Uniform ChannelName="uscale" Col="0" Default="1.0" DisplayName="Proportional" Inc="0.01" Max="1000000.0" Min="-1000000.0" Name="uscale" Page="0" ResDependent="None" Row="0" Tooltip="" Type="float">
+      </Uniform>
+      <Uniform Action3DWidget="False" ChannelName="scale" Col="0" DisplayName="Scale X and Y Separately" IconType="None" Inc="0.01" Name="scale" Page="0" Row="1" Tooltip="" Type="vec2">
+         <SubUniform Default="1.0" Max="1000000.0" Min="-1000000.0" ResDependent="None">
+         </SubUniform>
+         <SubUniform Default="1.0" Max="1000000.0" Min="-1000000.0" ResDependent="None">
+         </SubUniform>
+      </Uniform>
+      <Uniform ChannelName="invert" Col="2" Default="false" DisplayName="Invert Scale" Name="invert" Page="0" Row="0" Tooltip="" Type="bool">
+      </Uniform>
+      <Uniform ChannelName="output_uv" Col="2" Default="false" DisplayName="Output UVs" Name="output_uv" Page="0" Row="1" Tooltip="" Type="bool">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Col="0" Name="Scaling" Page="0">
+      </Col>
+      <Col Col="1" Name="Repeat Options" Page="0">
+      </Col>
+      <Col Col="2" Name="Options" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
