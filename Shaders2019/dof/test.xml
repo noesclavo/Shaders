@@ -1,0 +1,16 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2" Description="" Name="Preset Name">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="0" Col="0" Page="0" Type="int" ChannelName="repeat" DisplayName="repeat" Name="repeat">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="xxx" DisplayName="xxx" Name="xxx">
+      </Uniform>
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="2" Col="0" Page="0" Type="int" ChannelName="sides" DisplayName="sides" Name="sides">
+      </Uniform>
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float" ChannelName="rotate" DisplayName="rotate" Name="rotate">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

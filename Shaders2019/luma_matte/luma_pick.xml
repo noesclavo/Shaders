@@ -1,0 +1,32 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" 
+	MatteProvider="True" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2" Description="" Name="LUMAPICK">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" 
+	GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Type="float" ChannelName="falloff" DisplayName="Falloff" Name="falloff">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="pick" DisplayName="Pick Value" Name="pick"
+	UIConditionSource="picker" UIConditionValue="True" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Row="4" Col="0" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="picker" DisplayName="Pick Luminance" Name="picker">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="value" DisplayName="Luminance Value" Name="value">
+      </Uniform>
+
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Luminance Value" Col="0" Page="0">
+      </Col>
+      <Col Name="Falloff" Col="1" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

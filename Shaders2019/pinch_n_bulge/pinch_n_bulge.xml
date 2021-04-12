@@ -1,0 +1,43 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="" Name="PINCH N BULGE">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Inc="0.01" IconDefaultState="True" Tooltip="" Row="0" Col="1" Page="0" Action3DWidget="False" IconType="Light" Type="vec2" ChannelName="center" DisplayName="Center" Name="center">
+         <SubUniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="100.0" Min="-100.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="200" Inc="0.5" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="scale" DisplayName="Scale" Name="scale">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="10.0" Min="000000.0" Default="0.5" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="radius" DisplayName="Radius" Name="radius">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min=".0" Default="10.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="edge_hardness" DisplayName="Edge Hardness" Name="edge_hardness">
+      </Uniform>
+
+      <Uniform Max="6" Min="0" Default="2" Inc="1" Tooltip="" Row="0" Col="2" Page="0" DisplayName="Borders" Type="int" Name="repeat" ValueType="Popup">
+        <PopupEntry Title="Stretch" Value="0">
+        </PopupEntry>
+        <PopupEntry Title="Tile" Value="1">
+        </PopupEntry>
+        <PopupEntry Title="Mirror" Value="2">
+        </PopupEntry>
+        <PopupEntry Title="Crop" Value="3">
+        </PopupEntry>
+      </Uniform>
+
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Pinch" Col="0" Page="0">
+      </Col>
+      <Col Name="Options" Col="1" Page="0">
+      </Col>
+      <Col Name="Tiling" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

@@ -1,0 +1,43 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="True" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="" Name="SPIKEBALL">
+
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1" OutputWidth="1024" OutputHeight="1024">
+
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default="3.0" Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Type="float" ChannelName="rays" DisplayName="Rays" Name="noise_size">
+      </Uniform>
+
+      <Uniform Inc="0.1" Tooltip="Background Color. Adjust Hue / Gain / Saturation to liking." Row="0" Col="1" Page="0" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Tint" Name="tint" HueShift="False" AngleName="Hue" IntensityName1="Sat" IntensityName2="Gain">
+        <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="190.0" Inc="1.0">
+          </SubUniform>
+        <SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="50.0" Inc="1.0">
+          </SubUniform>
+        <SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="25.0" Inc="10.0">
+          </SubUniform>
+      </Uniform>
+
+
+      <Uniform ResDependent="None" Max="100.0" Min=".00001" Default="5.0" Inc="0.01" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="falloff" DisplayName="Falloff" Name="g">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="10.0" Min="1.0" Default="1.8" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float" ChannelName="hotspot" DisplayName="Hotspot" Name="glow">
+      </Uniform>
+
+      <Uniform Max="100" Min="0" Default="5" Inc="1" Tooltip="" Row="0" Col="2" Page="0" Type="int" ChannelName="center_heat" DisplayName="Center Heat" Name="center_heat">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.0" Default=".5" Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Type="float" ChannelName="brightness" DisplayName="Brightness" Name="gain">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="0.01" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float" ChannelName="gamma" DisplayName="gamma" Name="gamma">
+      </Uniform>
+
+   </Shader>
+   <Page Name="SPIKEBALL" Page="0">
+      <Col Name="Spikeball" Col="0" Page="0">
+      </Col>
+      <Col Name="Tint" Col="1" Page="0">
+      </Col>
+      <Col Name="Heat" Col="2" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

@@ -1,0 +1,20 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2" Description="" Name="Preset Name">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+       <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" Action3DWidget="False" IconType="None" ValueType="ColourWheelRGBOffset"
+           Type="vec3" ChannelName="color" DisplayName="color" Name="color">
+            <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" DisplayName="R" ChannelName="red">
+            </SubUniform>
+            <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" DisplayName="G" ChannelName="green">
+            </SubUniform>
+            <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" DisplayName="B" ChannelName="blue">
+            </SubUniform>
+        </Uniform>
+
+        <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="sat" DisplayName="sat" Name="sat">
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
