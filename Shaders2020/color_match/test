@@ -1,0 +1,26 @@
+mat3 src = mat3(
+    1, 2, 3,
+    0, 1, 4,
+    5, 6, 0
+)
+
+mat3 src_t = mat3(
+    src[0,0], src[0,1], src[0,2],
+    src[1,0], src[1,1], src[1,2],
+    src[2,0], src[2,1], src[2,2],
+)
+
+mat3 ata = src * src_t;
+
+mt00 = ata[1,1] * ata[2,2] - ata[1,2] * ata[2,1];
+
+
+create new matrix with that and mutliply by
+
+mat3 inv = mat3(
+    1, -1, 1,
+    -1, 1, -1,
+    1, -1, 1
+)
+
+mat3 atv

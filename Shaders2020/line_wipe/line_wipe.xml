@@ -1,0 +1,115 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="True" SupportsTimeline="False" TimelineUseBack="True" MatteProvider="True" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2" Description="" Name="LINE WIPE">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+       <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Outgoing" InputType="Front" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+           GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Outgoing">
+      </Uniform>
+
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Incoming" InputType="Back" Mipmaps="False" GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE"
+          GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Incoming">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="000000.0" Default="0.0" Inc="1." Tooltip="" Row="0" Col="0" Page="0" Type="float"
+          ChannelName="vertical" DisplayName="Vertical" Name="vertical">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="000000.0" Default="0.0" Inc="1." Tooltip="" Row="1" Col="0" Page="0" Type="float"
+          ChannelName="horizontal" DisplayName="Horizontal" Name="horizontal">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="0" Page="0" Type="float"
+          ChannelName="h_offset" DisplayName="Y Offset" Name="h_offset">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1.0" Min="-1.0" Default="0.0" Inc="0.01" Tooltip="" Row="2" Col="0" Page="0" Type="float"
+          ChannelName="v_offset" DisplayName="X Offset" Name="v_offset">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="4" Col="0" Page="0" Type="float" ChannelName="draw" DisplayName="Draw" Name="draw">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="1" Page="0" Action3DWidget="False" IconType="Pick" ValueType="Colour" Type="vec3" ChannelName="line_color" DisplayName="Line Color" Name="line_color">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="000000.0" Default="20.0" Inc="0.5" Tooltip="" Row="1" Col="1" Page="0" Type="float"
+          ChannelName="line_width" DisplayName="Line Width" Name="line_width">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1.0" Min="00000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="1" Page="0"
+          Type="float" ChannelName="line_opacity" DisplayName="Line Opacity" Name="line_opacity">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="10.0" Inc="1.0" Tooltip="" Row="3" Col="1" Page="0" Type="float"
+          ChannelName="line_softness" DisplayName="Softness" Name="line_softness">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.5" Tooltip="" Row="0" Col="2" Page="0" Type="float" ChannelName="rotation" DisplayName="Rotation" Name="rotation">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="2" Page="0" Action3DWidget="False" IconType="Axis" Type="vec2" ChannelName="center" DisplayName="Center" Name="center">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform Row="3" Col="2" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="vwipe" DisplayName="V Wipe" Name="vwipe">
+      </Uniform>
+
+      <!--
+      <Uniform Row="0" Col="3" Page="0" Default="False" Tooltip="" Type="bool" ChannelName="circles" DisplayName="Circles" Name="circles">
+      </Uniform>
+
+      <Uniform Inc="0.01" Tooltip="" Row="1" Col="3" Page="0" Action3DWidget="False" IconType="None" ValueType="Colour" Type="vec3" ChannelName="circle_color" DisplayName="Circle Color" Name="circle_color"
+          UIConditionSource="circles" UIConditionValue="True" UIConditionType="Hide">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.5">
+         </SubUniform>
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1.0" Min="0.0" Default="0.4" Inc="0.01" Tooltip="" Row="2" Col="3" Page="0" Type="float" ChannelName="circle_size" DisplayName="Radius" Name="circle_size"
+          UIConditionSource="circles" UIConditionValue="True" UIConditionType="Hide">
+      </Uniform>
+      -->
+
+      <!--
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.01" Tooltip="" Row="3" Col="3" Page="0" Type="float" ChannelName="circle_offset" DisplayName="Offset" Name="circle_offset"
+          UIConditionSource="circles" UIConditionValue="True" UIConditionType="Hide">
+      </Uniform>
+      -->
+
+
+      <!--
+      <Uniform ResDependent="None" Max="10.0" Min="000000.0" Default="1.0" Inc="0.01" Tooltip="" Row="2" Col="2" Page="0" Type="float"
+          ChannelName="circle_softness" DisplayName="circle_softness" Name="circle_softness">
+      </Uniform>
+      -->
+
+
+      <Uniform Max="1" Min="00000" Default="0" Inc="1" Tooltip="" Row="0" Col="3" Page="0" Type="int" ChannelName="matte_output" DisplayName="Matte Output" Name="matte_output" ValueType="Popup">
+        <PopupEntry Title="Line" Value="0">
+        </PopupEntry>
+        <PopupEntry Title="Reveal" Value="1">
+        </PopupEntry>
+      </Uniform>
+
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Wipe" Col="0" Page="0">
+      </Col>
+      <Col Name="Line" Col="1" Page="0">
+      </Col>
+      <Col Name="Rotate" Col="2" Page="0">
+      </Col>
+      <Col Name="I/O" Col="3" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

@@ -1,0 +1,49 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="True" SupportsTransition="True" SupportsTimeline="True" TimelineUseBack="True" MatteProvider="True" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="False" Version="2" Description="" Name="CIRCLES">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+       <Uniform Index="0" NoInput="Error" Tooltip="" DisplayName="Front" InputType="Front" Mipmaps="False" 
+           GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Front">
+      </Uniform>
+
+      <Uniform Index="1" NoInput="Error" Tooltip="" DisplayName="Back" InputType="Back" Mipmaps="False"
+          GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Back">
+      </Uniform>
+
+      <Uniform Index="2" NoInput="White" Tooltip="" DisplayName="Matte" InputType="Matte" Mipmaps="False"
+          GL_TEXTURE_WRAP_T="GL_CLAMP_TO_EDGE" GL_TEXTURE_WRAP_S="GL_CLAMP_TO_EDGE" GL_TEXTURE_MAG_FILTER="GL_LINEAR" GL_TEXTURE_MIN_FILTER="GL_LINEAR" Type="sampler2D" Name="Matte">
+      </Uniform>
+
+      <Uniform Max="1000000" Min="-1000000" Default="1000" Inc="1" Tooltip="" Row="0" Col="0" Page="0" Type="int" ChannelName="number" DisplayName="Number" Name="number">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="0.0" Default="50.0" Inc="0.5" Tooltip="" Row="1" Col="0" Page="0" Type="float" ChannelName="scale" DisplayName="Scale" Name="scale">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.5" Tooltip="" Row="2" Col="0" Page="0" Type="float"
+          ChannelName="x_offset" DisplayName="X Offset" Name="x_offset">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="0.0" Inc="0.5" Tooltip="" Row="3" Col="0" Page="0" Type="float"
+          ChannelName="y_offset" DisplayName="Y Offset" Name="y_offset">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="00000.0" Default="250.0" Inc="1." Tooltip="" Row="4" Col="0" Page="0" Type="float"
+          ChannelName="diameter" DisplayName="Diameter" Name="diameter">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="1000000.0" Min="0000.0" Default="10.0" Inc="0.5" Tooltip="" Row="0" Col="1" Page="0" Type="float" 
+          ChannelName="softness" DisplayName="Softness" Name="softness">
+      </Uniform>
+
+      <Uniform ResDependent="None" Max="100.0" Min="000000.0" Default="0.0" Inc="1." Tooltip="" Row="1" Col="1" Page="0" Type="float" ChannelName="Mix" DisplayName="Transparency" Name="mixx">
+      </Uniform>
+
+   </Shader>
+
+   <Page Name="CIRCLES 1" Page="0">
+      <Col Name="Circles" Col="0" Page="0">
+      </Col>
+      <Col Name="Options" Col="1" Page="0">
+      </Col>
+   </Page>
+
+</ShaderNodePreset>

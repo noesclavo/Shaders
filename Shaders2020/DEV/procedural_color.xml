@@ -1,0 +1,29 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="1" Description="" Name="Preset Name">
+   <Shader ClearColor="0, 0, 0, 0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+      <Uniform Max="1000000" Min="-1000000" Default="0" Inc="1" Tooltip="" Row="0" Col="3" Page="0" Type="int" ChannelName="i" DisplayName="Matte Out" Name="i">
+      </Uniform>
+
+      <Uniform Inc="0.1" Tooltip="" Row="0" Col="0" Page="0" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Color A" Name="ca" HueShift="False" AngleName="Hue" IntensityName1="Sat" IntensityName2="Gain">
+      	<SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="0.0" Inc=".5">
+      		</SubUniform>
+      	<SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="100.0" Inc=".5">
+      		</SubUniform>
+      	<SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="50.0" Inc="1.0">
+      		</SubUniform>
+      </Uniform>
+
+      <Uniform Inc="0.1" Tooltip="" Row="0" Col="1" Page="0" IconType="None" ValueType="ColourWheel" Type="vec3" DisplayName="Color B" Name="cc" HueShift="False" AngleName="Hue" IntensityName1="Sat" IntensityName2="Gain">
+      	<SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="90.0" Inc=".5">
+      		</SubUniform>
+      	<SubUniform ResDependent="None" Max="1000.0" Min="-1000.0" Default="100.0" Inc=".5">
+      		</SubUniform>
+      	<SubUniform ResDependent="None" Max="100.0" Min="0.0" Default="50.0" Inc="1.0">
+      		</SubUniform>
+      </Uniform>
+
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
