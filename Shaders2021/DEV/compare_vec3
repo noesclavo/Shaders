@@ -1,0 +1,46 @@
+vec3 comp3 (vec3 color, vec3 test, vec3 yes, vec3 no, int op) {
+	vec3 retval = no;
+
+	// Equal to
+	if (op == 0) {
+		if (color.r == test.r) {
+			retval.r = yes.r;
+		}
+
+		if (color.g == test.g) {
+			retval.g = yes.g;
+		}
+
+		if (color.b == test.b) {
+			retval.b = yes.b;
+		}
+	// Less than
+	} else if (op == 1) {
+		if (color.r < test.r) {
+			retval.r = yes.r;
+		}
+
+		if (color.g < test.g) {
+			retval.g = yes.g;
+		}
+
+		if (color.b < test.b) {
+			retval.b = yes.b;
+		}
+	// Greater than
+	} else if (op == 2) {
+		if (color.r > test.r) {
+			retval.r = yes.r;
+		}
+
+		if (color.g > test.g) {
+			retval.g = yes.g;
+		}
+
+		if (color.b > test.b) {
+			retval.b = yes.b;
+		}
+	}
+
+	return retval;
+}

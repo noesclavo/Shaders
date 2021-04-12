@@ -1,0 +1,8 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False" SupportsAction="False" SupportsTransition="False" SupportsTimeline="False" TimelineUseBack="False" MatteProvider="False" CommercialUsePermitted="True" ShaderType="Matchbox" SoftwareVersion="2017.0.0" LimitInputsToTexture="True" Version="2" Description="" Name="Preset Name">
+   <Shader Clear="0" GridSubdivision="1" OutputBitDepth="Output" Index="1">
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>

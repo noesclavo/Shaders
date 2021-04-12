@@ -1,0 +1,20 @@
+<ShaderNodePreset SupportsAdaptiveDegradation="False"
+		  OverrideNormals="False" ShaderType="Lightbox"
+		  SoftwareVersion="2016.0.0"
+		  LimitInputsToTexture="True" Version="1"
+		  Description="Simple light example" Name="SimpleLight">
+   <Shader OutputBitDepth="Output" Index="1">
+      <Uniform Inc="0.01" Tooltip="" Row="0" Col="0" Page="0" IconType="None" ValueType="Colour" Type="vec3" DisplayName="lightColor" Name="adskUID_lightColor">
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+         <SubUniform ResDependent="None" Max="1000000.0" Min="-1000000.0" Default="1.0">
+         </SubUniform>
+      </Uniform>
+   </Shader>
+   <Page Name="Page 1" Page="0">
+      <Col Name="Column 1" Col="0" Page="0">
+      </Col>
+   </Page>
+</ShaderNodePreset>
