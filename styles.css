@@ -1,0 +1,52 @@
+.p-ia4_client .p-view_contents--sidebar.p-view_contents--channel-list-pry {
+    background-color: #303030;
+}
+
+.sk-client-theme--dark .p-ia4_client .p-view_contents--sidebar {
+    border-right: 1px solid var(--dt_color-otl-ter);
+    background-clip: padding-box;
+    border: 1px solid #aaaaaa;
+    padding: 10px;
+}
+
+.p-drag_layer .p-channel_sidebar__section_heading.p-channel_sidebar__section_heading_channels, .p-channel_sidebar--iap1 .p-channel_sidebar__section_heading.p-channel_sidebar__section_heading_channels {
+    cursor: initial;
+    width: auto;
+    height: 15px;
+    margin: 0 8px;
+    padding: 0 16px;
+    font-size: 20px;
+    color: #ffffff;
+}
+.p-drag_layer .p-channel_sidebar__section_heading_label, .p-channel_sidebar--iap1 .p-channel_sidebar__section_heading_label {
+    font-weight: 400;
+    text-decoration: underline;
+    border-bottom: 10px;
+    border-color: #ffffffff;
+    border-width: thin;
+}
+.p-channel_sidebar {
+    color: var(--dt_color-theme-content-inv-sec);
+    background-color: #303030;
+    flex-direction: column;
+    flex: 1;
+    width: 220px;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    position: relative;
+}
+
+.p-drag_layer .p-channel_sidebar__section_heading.p-channel_sidebar__section_heading_channels, .p-channel_sidebar--iap1 .p-channel_sidebar__section_heading.p-channel_sidebar__section_heading_channels {
+    cursor: initial;
+    width: 100%;
+    height: 20px;
+    margin: 0px 1px 5px 5px;
+    padding: 10px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+:is(.p-channel_sidebar--iap1:not(:has(.p-channel_sidebar__link--discount_offer)) .p-channel_sidebar__section_heading,.p-channel_sidebar--iap1:not(:has(.p-channel_sidebar__link--discount_offer)) .p-channel_sidebar__section_placeholder,.p-channel_sidebar--iap1:not(:has(.p-channel_sidebar__link--discount_offer)) .p-channel_sidebar__channel,.p-channel_sidebar--iap1:not(:has(.p-channel_sidebar__link--discount_offer)) .p-channel_sidebar__link) {
+    padding-left: 40px;
+}
